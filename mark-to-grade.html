@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mark to Grade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Mark to Grade Converter</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mark-to-grade.html">Mark to Grade</a>
+    <a href="staff.html">Staff</a>
+    <a href="temperature.html">Temperature Converter</a>
+  </nav>
+</header>
+
+<main>
+  <label for="mark">Enter Mark (0-100):</label>
+  <input type="text" id="mark">
+  <button onclick="convertMark()">Convert</button>
+  <p id="validation-message"></p>
+  <p id="grade-result"></p>
+</main>
+
+<footer>
+  &copy; Muhammad Parwaz - <span id="date"></span>
+</footer>
+
+<script>
+function convertMark() {
+  const markInput = document.getElementById('mark').value.trim();
+  const message = document.getElementById('validation-message');
+  const result = document.getElementById('grade-result');
+  message.textContent = '';
+  result.textContent = '';
+
+  const mark = parseFloat(markInput);
+  if (markInput === '') {
+    message.textContent = 'Please enter a mark.';
+    return;
+  }
+  if (isNaN(mark)) {
+    message.textContent = 'Mark must be a number.';
+    return;
+  }
+  if (mark < 0 || mark > 100) {
+    message.textContent = 'Mark must be between 0 and 100.';
+    return;
+  }
+
+  let grade = '';
+  if (mark >= 90) grade = 'A';
+  else if (mark >= 80) grade = 'B';
+  else if (mark >= 70) grade = 'C';
+  else if (mark >= 60) grade = 'D';
+  else if (mark >= 50) grade = 'E';
+  else grade = 'F';
+
+  result.textContent = `Your grade is: ${grade}`;
+}
+
+document.getElementById("date").innerText = new Date().toLocaleDateString();
+</script>
+</body>
+</html>

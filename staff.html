@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="staff.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>Staff Directory</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="mark-to-grade.html">Mark to Grade</a>
+    <a href="staff.html">Staff</a>
+    <a href="temperature.html">Temperature Converter</a>
+  </nav>
+</header>
+
+<main>
+  <button onclick="sortByName()">Sort by Name</button>
+  <button onclick="sortBySalary()">Sort by Salary</button>
+  <table id="staff-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</main>
+
+<footer>
+  &copy; Muhammad Parwaz - <span id="date"></span>
+</footer>
+
+<script>
+document.getElementById("date").innerText = new Date().toLocaleDateString();
+</script>
+</body>
+</html>

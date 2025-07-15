@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('profile-pic').style.display = 'block';
+      }, 10000);
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <h1>My Personal Profile</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="mark-to-grade.html">Mark to Grade</a>
+      <a href="staff.html">Staff</a>
+      <a href="temperature.html">Temperature Converter</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>Hello! My Name is Muhammad Parwaz and I'm a passionate web development student learning JavaScript essentials.</p>
+    <p>This profile page demonstrates basic HTML, CSS, and JavaScript skills as part of Assignment 1.</p>
+    <img id="profile-pic" src="Me.jpg" alt="Profile Picture" style="display:none;" width="400" height="400">
+  </main>
+
+  <footer>
+    &copy; Muhammad Parwaz - <span id="date"></span>
+  </footer>
+
+  <script>
+    document.getElementById("date").innerText = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
